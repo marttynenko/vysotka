@@ -1789,3 +1789,9 @@ span.invalid {
         height: 60px;
     }
 }
+
+.checbox-wrapper + span.invalid {
+    margin-top: -10px;
+    padding-top: 0;
+    margin-bottom: 15px;
+}

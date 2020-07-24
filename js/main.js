@@ -4,24 +4,21 @@ jQuery.validator.setDefaults({
     focusInvalid: false,
     errorElement: 'span',
     errorPlacement: function (error, element) {
-    if ( element.parent().hasClass('jq-checkbox') ||  element.parent().hasClass('jq-radio')) {
-      element.closest('label').after(error);
-      
-    } else if (element.parent().hasClass('jq-selectbox')) {
-      element.closest('.jq-selectbox').after(error);
+    if ( element.parent().hasClass('checbox-wrapper') ) {
+      element.closest('.checbox-wrapper').after(error);
     } else {
       error.insertAfter(element);
     }
   },
   highlight: function(element, errorClass, validClass) {
-    if ( $(element).parent().hasClass('jq-checkbox') ||  $(element).parent().hasClass('jq-radio') || $(element).parent().hasClass('jq-selectbox')) {
+    if ( $(element).parent().hasClass('checbox-wrapper')) {
         $(element).parent().addClass(errorClass).removeClass(validClass);
     } else {
         $(element).addClass(errorClass).removeClass(validClass);
     }
   },
   unhighlight: function(element, errorClass, validClass) {
-    if ( $(element).parent().hasClass('jq-checkbox') ||  $(element).parent().hasClass('jq-radio') || $(element).parent().hasClass('jq-selectbox')) {
+    if ( $(element).parent().hasClass('checbox-wrapper')) {
         $(element).parent().removeClass(errorClass).addClass(validClass);
     } else {
         $(element).removeClass(errorClass).addClass(validClass);
